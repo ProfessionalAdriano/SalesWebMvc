@@ -10,7 +10,7 @@ namespace SalesWebMvc.Services
     {
         private readonly SalesWebMvcContext _context; // readonly --> Previne q a dependencia nao seja alterada.
 
-             public SellerService(SalesWebMvcContext context)
+        public SellerService(SalesWebMvcContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace SalesWebMvc.Services
 
         public void Insert(Seller obj)
         {
-            obj.Department = _context.Department.First();
+
             _context.Add(obj);
             _context.SaveChanges();
         }
